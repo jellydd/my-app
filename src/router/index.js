@@ -1,18 +1,27 @@
 import React from "react";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "../pages/Home";
-import LifeService from "../pages/LifeService";
-import Shop from "../pages/Shop";
-import User from "../pages/User";
+import { HashRouter, Route, Switch } from "react-router-dom";
+
+import Login from "../view/Login";
+import NewsSandBox from "../view/SandBox";
+
 const Approuter = () => {
   return (
-    <Router>
+    <HashRouter>
       <Switch>
-        <Route exact path="/" component={Home}></Route>
-        <Route path="/life" component={LifeService}></Route>
-        <Route path="/shop" component={Shop}></Route>
-        <Route path="/user" component={User}></Route>
+        <Route path="/login" component={Login} />
+        <Route path="/" component={NewsSandBox}></Route>
+        {/* <Route
+          path="/"
+          render={() => {
+            localStorage.getItem("token") ? (
+              <NewsSandBox></NewsSandBox>
+            ) : (
+              <Redirect to="/login" />
+            );
+          }}
+        /> */}
       </Switch>
-    </Router>
+    </HashRouter>
   );
 };
+export default Approuter;
