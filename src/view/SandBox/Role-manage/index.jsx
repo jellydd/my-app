@@ -1,7 +1,7 @@
 import React from "react";
 
 function index() {
-  return <div>Rgiht</div>;
+  return <div>Role</div>;
 }
 
 export default index;
